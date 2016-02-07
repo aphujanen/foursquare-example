@@ -13,8 +13,8 @@ function geolocation($q, $window) {
         function (position) {
           deferred.resolve(position);
         },
-        function (err) {
-          deferred.reject(err);
+        function () {
+          deferred.reject(deferred.reject('Please allow geolocation to proceed.'););
         });
     }
 
