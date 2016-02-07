@@ -1,0 +1,9 @@
+{
+  "name": "foursquare-example",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "~1.4.9",
+    "angular-mocks": "~1.4.9",
+    "angular-ui-router": "~0.2.15"
+  }
+}

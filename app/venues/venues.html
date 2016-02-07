@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <p ng-if="vm.message.msg" class="bg-{{ vm.message.type }}" style="padding: 10px;">{{ vm.message.msg }}</p>
+      <p ng-if="vm.coords && !vm.location.address.road && !vm.location.address.city" class="bg-success" style="padding: 10px;">Location: {{ vm.coords.latitude }}, {{ vm.coords.longitude }}</p>
+      <p ng-if="vm.location.address.road || vm.location.address.city" class="bg-success" style="padding: 10px;">Location: {{ vm.location.address.road }}, {{ vm.location.address.city }}</p>
+
+      <div class="form-group">
+        <input class="form-control" type="text" ng-disabled="!vm.coords" ng-change="vm.search(vm.keyword)" ng-model="vm.keyword" ng-model-options='{ debounce: 500 }' placeholder="Search for venues">
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="venue in vm.venues">
+          {{ venue.name }} <span class="pull-right">{{ venue.location.distance | meters2km }}</span><br>
+          <span ng-if="venue.location.address || venue.location.city">{{ venue.location.address }} {{ venue.location.postalCode }} {{ venue.location.city }}</span>
+          <span ng-if="!venue.location.address && !venue.location.city" class="text-warning">Address not available</span>
+        </li>
+        <li ng-if="vm.keyword && vm.venues.length == 0" class="list-group-item text-warning">No results, change your search term.</li>
+      </ul>
+    </div>
+  </div>
+</div>

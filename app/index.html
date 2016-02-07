@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="foursquare-example">
+  <head>
+    <meta charset="utf-8">
+    <title>foursquare example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div ui-view></div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.routes.js"></script>
+    <script src="services/geocoding.service.js"></script>
+    <script src="services/geolocation.service.js"></script>
+    <script src="services/foursquare.service.js"></script>
+    <script src="filters/meters2km.filter.js"></script>
+    <script src="venues/venues.controller.js"></script>
+    <script src="foursquare.config.js"></script>
+  </body>
+</html>
